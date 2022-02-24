@@ -72,12 +72,12 @@ public class BallTrajectoryPredictor
         {
             return false;
         }
-        if (targetX == x || path.Count >= MaxNumVerticesAllowed)
+        if (path.Count >= MaxNumVerticesAllowed)
         {
             return true;
         }
         
-        return startDirection.x > 0 ? x > targetX : x < targetX;
+        return startDirection.x > 0 ? x >= targetX : x <= targetX;
     }
     private Vector2 ExtrapolatePoint(Vector2 position, Vector2 direction, float x)
     {
