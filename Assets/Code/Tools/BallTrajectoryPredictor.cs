@@ -76,16 +76,8 @@ public class BallTrajectoryPredictor
         {
             return true;
         }
-
-        if (targetX < StartPoint.x)
-        {
-            return x < targetX;
-        }
-        if (targetX > StartPoint.x)
-        {
-            return x > targetX;
-        }
-        return startDirection.x < 0 ? x > targetX : x < targetX;
+        
+        return startDirection.x > 0 ? x > targetX : x < targetX;
     }
     private Vector2 ExtrapolatePoint(Vector2 position, Vector2 direction, float x)
     {
